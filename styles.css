@@ -180,6 +180,20 @@ section h2 {
   .images-container a {
     width: 100%; /* 1 image par ligne sur mobile */
   }
+  header,
+  .hero-section {
+    background-position: top center;
+    background-size: cover;
+    min-height: 60vh;
+    padding-top: 5rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
 }
 
 .images-container img {
@@ -488,6 +502,17 @@ section h2 {
 @media (max-width: 768px) {
   .localisation-content {
     flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    padding: 1rem 0;
+    display: none; /* ou visible si tu ajoutes un bouton */
+  }
+
+  nav ul.active {
+    display: flex;
   }
 }
 
