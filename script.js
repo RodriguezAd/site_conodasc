@@ -1,3 +1,20 @@
+// Pour la gestion de la barre de navigation (menu) pour les smartphones
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+	
+  // ✅ Fermer le menu quand un lien est cliqué
+  const navItems = navLinks.querySelectorAll('a');
+  navItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+
+
 // ====================
 // BLOG (Section Actualités)
 // ====================
