@@ -1,6 +1,6 @@
-# 🌐 Site Web du Collège CONODASC (Sangmélima)
+# 🌐 Site Web du Collège Notre Dame du Sacré-Cœur de Sangmélima (CONODASC)
 
-Ce site est une vitrine moderne pour le **Collège Notre Dame du Sacré-Cœur de Sangmélima (CONODASC)**, conçu pour valoriser l’établissement sur le web.
+Ce site est une vitrine moderne pour le **CONODASC**, conçu pour valoriser l’établissement sur le web.
 
 ## ✨ Objectifs du site
 - Présenter le collège et ses valeurs
