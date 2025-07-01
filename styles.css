@@ -180,12 +180,15 @@ section h2 {
   .images-container a {
     width: 100%; /* 1 image par ligne sur mobile */
   }
-  header,
   .hero-section {
-    background-position: top center;
-    background-size: cover;
+    height: auto;
+    padding: 5rem 1rem;
+    background-position: center top;
+  }
+
+  header {
+    background-position: center top;
     min-height: 60vh;
-    padding-top: 5rem;
   }
   header h1 {
     font-size: 1.8rem;
@@ -195,36 +198,6 @@ section h2 {
     font-size: 1rem;
   }
 }
-
-
-@media only screen and (orientation: portrait) {
-  .landscape-tip {
-    position: fixed;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.85);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    z-index: 9999;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    animation: fadeInLand 0.5s ease-in-out;
-  }
-}
-
-@media only screen and (orientation: landscape) {
-  .landscape-tip {
-    display: none;
-  }
-}
-
-@keyframes fadeInLand {
-  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
 
 .images-container img {
   width: 100%;
@@ -533,18 +506,54 @@ section h2 {
   .localisation-content {
     flex-direction: column;
   }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0,0,0,0.8);
-    padding: 1rem 0;
-    display: none; /* ou visible si tu ajoutes un bouton */
+
+}
+
+#burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #burger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
   }
 
-  nav ul.active {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  nav ul.show {
     display: flex;
   }
+
+  nav li {
+    margin: 1rem 0;
+  }
 }
+
+
+
+
+
+
+
 
 
 /* Footer */

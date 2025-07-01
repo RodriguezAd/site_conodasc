@@ -10,9 +10,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 </head>
 <body>
-	<div class="landscape-tip">
-	  🔄 Pour une meilleure expérience, tournez votre téléphone en mode paysage
-	</div>
+
   <!-- Header -->
   <header>
     <h1>CONODASC</h1>
@@ -21,7 +19,8 @@
 
   <!-- Navigation -->
   <nav>
-    <ul>
+    <button id="burger" aria-label="Menu">&#9776;</button>
+    <ul id="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#sections">Sections</a></li>
       <li><a href="#viescolaire">Vie scolaire & Infrastructures</a></li>
@@ -351,6 +350,13 @@
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>		
 
   <script src = "script.js"></script>
+  <script>
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
 
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
