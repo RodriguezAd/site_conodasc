@@ -1,0 +1,520 @@
+/* Variables de couleurs */
+:root {
+  --bleu-ciel: #00bfff;
+  --blanc: #ffffff;
+  --noir-doux: #222222;
+  --gris-clair: #f5f5f5;
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: var(--blanc);
+  color: var(--noir-doux);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: url('images/conodasc-building.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.2rem;
+}
+
+/* Langue */
+.lang-switch {
+  margin-top: 1rem;
+}
+.lang-switch select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(60,60,60,0.5));
+  z-index: 1000;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav li {
+  margin: 0.5rem 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--blanc);
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: var(--bleu-ciel);
+  border-bottom: 2px solid var(--bleu-ciel);
+}
+
+/* Sections */
+section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+section h2 {
+  color: var(--bleu-ciel);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #444;
+}
+
+
+#accueil p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+#accueil .intro {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  image-rendering: auto;
+}
+
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-grid a {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-grid a::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-grid a:hover::after {
+  opacity: 1;
+}
+
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.images-container a {
+  width: calc(33.33% - 1rem); /* 3 images par ligne, avec espace entre */
+}
+
+@media (max-width: 768px) {
+  .images-container a {
+    width: calc(50% - 1rem); /* 2 images par ligne en tablette */
+  }
+}
+
+@media (max-width: 480px) {
+  .images-container a {
+    width: 100%; /* 1 image par ligne sur mobile */
+  }
+}
+
+.images-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.images-container img:hover {
+  transform: scale(1.02);
+}
+
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('images/conodasc-building.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.0); /* plus opaque que 0.55 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: inline-block; /* pour que le fond colle au texte */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+
+.card ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+  line-height: 1.5;
+}
+
+
+.see-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.see-more-button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.see-more-button:hover {
+  background-color: #005fa3;
+}
+
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Blog Posts */
+.post {
+  background: var(--gris-clair);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.post h3 {
+  color: var(--bleu-ciel);
+  margin-bottom: 0.3rem;
+}
+
+.post small {
+  color: #777;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* La modale pour lire plus en ce qui concerne le blog */
+	.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 5px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* FAQ */
+.faq-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 0;
+}
+
+.faq-answer.visible {
+  max-height: 200px; /* ou + selon ton contenu */
+  padding: 0.5rem 0;
+  opacity: 1;
+}
+
+
+/* Contact/Formulaire */
+.contact-section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.contact-form button {
+  padding: 0.75rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #005fa3;
+}
+
+
+
+/* Google Map */
+.localisation-section {
+  padding: 3rem 1rem;
+  background-color: var(--gris-clair);
+}
+
+.localisation-section h2 {
+  color: var(--bleu-ciel);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.localisation-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.adresse {
+  flex: 1 1 300px;
+  font-size: 1.1rem;
+  color: var(--noir-doux);
+}
+
+.carte {
+  flex: 2 1 500px;
+}
+
+@media (max-width: 768px) {
+  .localisation-content {
+    flex-direction: column;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--noir-doux);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* cards & Ici on affine les transitions */
+.card {
+  background-color: var(--gris-clair);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card, .post {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
