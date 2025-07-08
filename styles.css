@@ -550,6 +550,21 @@ section h2 {
 }
 
 
+.btn-download {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: #1abc9c;
+}
+
 
 
 
